@@ -1,0 +1,3691 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/gemini-testing/gemini"
+
+    >gemini (v4.18.1)</a>
+</h1>
+<h4>UI Screenshot testing utility</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini">module gemini</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.gemini">
+            function <span class="apidocSignatureSpan"></span>gemini
+            <span class="apidocSignatureSpan">(config, allowOverrides)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_config">
+            function <span class="apidocSignatureSpan">gemini.</span>browser_config
+            <span class="apidocSignatureSpan">(id, systemOptions, browserOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.caching_pool">
+            function <span class="apidocSignatureSpan">gemini.</span>caching_pool
+            <span class="apidocSignatureSpan">(config, underlyingPool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.calibrator">
+            function <span class="apidocSignatureSpan">gemini.</span>calibrator
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera">
+            function <span class="apidocSignatureSpan">gemini.</span>camera
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge">
+            function <span class="apidocSignatureSpan">gemini.</span>client_bridge
+            <span class="apidocSignatureSpan">(browser, script)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.gemini_error">
+            function <span class="apidocSignatureSpan">gemini.</span>gemini_error
+            <span class="apidocSignatureSpan">(message, advice)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.limited_use_set">
+            function <span class="apidocSignatureSpan">gemini.</span>limited_use_set
+            <span class="apidocSignatureSpan">(useLimit, finalize)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.no_ref_image_error">
+            function <span class="apidocSignatureSpan">gemini.</span>no_ref_image_error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.pool">
+            function <span class="apidocSignatureSpan">gemini.</span>pool
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.state_error">
+            function <span class="apidocSignatureSpan">gemini.</span>state_error
+            <span class="apidocSignatureSpan">(message, originalError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor">
+            function <span class="apidocSignatureSpan">gemini.</span>suite_monitor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>browser_config.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>browser_options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>caching_pool.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>calibrator.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>camera.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>client_bridge.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>config_reader</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>deprecations</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>gemini_error.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>limited_use_set.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>no_ref_image_error.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>pool.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>state_error.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>suite_monitor.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>suite_util</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>temp</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>util</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.</span>wd_bluebird</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.browser_config">module gemini.browser_config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_config.browser_config">
+            function <span class="apidocSignatureSpan">gemini.</span>browser_config
+            <span class="apidocSignatureSpan">(id, systemOptions, browserOptions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.browser_config.prototype">module gemini.browser_config.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_config.prototype.getAbsoluteUrl">
+            function <span class="apidocSignatureSpan">gemini.browser_config.prototype.</span>getAbsoluteUrl
+            <span class="apidocSignatureSpan">(relUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_config.prototype.getScreenshotPath">
+            function <span class="apidocSignatureSpan">gemini.browser_config.prototype.</span>getScreenshotPath
+            <span class="apidocSignatureSpan">(suite, state)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_config.prototype.getScreenshotsDir">
+            function <span class="apidocSignatureSpan">gemini.browser_config.prototype.</span>getScreenshotsDir
+            <span class="apidocSignatureSpan">(suite, state)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.browser_options">module gemini.browser_options</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_options.getPerBrowser">
+            function <span class="apidocSignatureSpan">gemini.browser_options.</span>getPerBrowser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.browser_options.getTopLevel">
+            function <span class="apidocSignatureSpan">gemini.browser_options.</span>getTopLevel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.caching_pool">module gemini.caching_pool</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.caching_pool.caching_pool">
+            function <span class="apidocSignatureSpan">gemini.</span>caching_pool
+            <span class="apidocSignatureSpan">(config, underlyingPool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.caching_pool.super_">
+            function <span class="apidocSignatureSpan">gemini.caching_pool.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.caching_pool.prototype">module gemini.caching_pool.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.caching_pool.prototype.cancel">
+            function <span class="apidocSignatureSpan">gemini.caching_pool.prototype.</span>cancel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.caching_pool.prototype.freeBrowser">
+            function <span class="apidocSignatureSpan">gemini.caching_pool.prototype.</span>freeBrowser
+            <span class="apidocSignatureSpan">(browser, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.caching_pool.prototype.getBrowser">
+            function <span class="apidocSignatureSpan">gemini.caching_pool.prototype.</span>getBrowser
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.calibrator">module gemini.calibrator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.calibrator.calibrator">
+            function <span class="apidocSignatureSpan">gemini.</span>calibrator
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.calibrator.prototype">module gemini.calibrator.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.calibrator.prototype._analyzeImage">
+            function <span class="apidocSignatureSpan">gemini.calibrator.prototype.</span>_analyzeImage
+            <span class="apidocSignatureSpan">(image, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.calibrator.prototype.calibrate">
+            function <span class="apidocSignatureSpan">gemini.calibrator.prototype.</span>calibrate
+            <span class="apidocSignatureSpan">(browser)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.camera">module gemini.camera</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.camera">
+            function <span class="apidocSignatureSpan">gemini.</span>camera
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.camera.prototype">module gemini.camera.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype.__constructor">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>__constructor
+            <span class="apidocSignatureSpan">(wdRemote, screenshotMode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype.__self">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>__self
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype._applyCalibration">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_applyCalibration
+            <span class="apidocSignatureSpan">(image)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype._cropToViewport">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_cropToViewport
+            <span class="apidocSignatureSpan">(image, page)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype._takeScreenshot">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_takeScreenshot
+            <span class="apidocSignatureSpan">(page)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype._takeScreenshotWithNativeContext">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_takeScreenshotWithNativeContext
+            <span class="apidocSignatureSpan">(page)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype._tryScreenshotMethod">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_tryScreenshotMethod
+            <span class="apidocSignatureSpan">(method, page)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype.calibrate">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>calibrate
+            <span class="apidocSignatureSpan">(calibration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype.captureViewportImage">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>captureViewportImage
+            <span class="apidocSignatureSpan">(page)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype.constructor">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.camera.prototype.scroll">
+            function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>scroll
+            <span class="apidocSignatureSpan">(x, y)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.client_bridge">module gemini.client_bridge</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge.client_bridge">
+            function <span class="apidocSignatureSpan">gemini.</span>client_bridge
+            <span class="apidocSignatureSpan">(browser, script)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.client_bridge.prototype">module gemini.client_bridge.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge.prototype._callCommand">
+            function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_callCommand
+            <span class="apidocSignatureSpan">(command, injectAllowed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge.prototype._clientMethodCommand">
+            function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_clientMethodCommand
+            <span class="apidocSignatureSpan">(name, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge.prototype._guardClientCall">
+            function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_guardClientCall
+            <span class="apidocSignatureSpan">(call)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge.prototype._inject">
+            function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_inject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.client_bridge.prototype.call">
+            function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>call
+            <span class="apidocSignatureSpan">(name, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.config_reader">module gemini.config_reader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.config_reader.read">
+            function <span class="apidocSignatureSpan">gemini.config_reader.</span>read
+            <span class="apidocSignatureSpan">(filePath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.deprecations">module gemini.deprecations</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.deprecations.checkForDeprecations">
+            function <span class="apidocSignatureSpan">gemini.deprecations.</span>checkForDeprecations
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.errors">module gemini.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.errors.handleErrors">
+            function <span class="apidocSignatureSpan">gemini.errors.</span>handleErrors
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.errors.handleUncaughtExceptions">
+            function <span class="apidocSignatureSpan">gemini.errors.</span>handleUncaughtExceptions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.gemini_error">module gemini.gemini_error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.gemini_error.gemini_error">
+            function <span class="apidocSignatureSpan">gemini.</span>gemini_error
+            <span class="apidocSignatureSpan">(message, advice)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.gemini_error.prototype">module gemini.gemini_error.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.gemini_error.prototype.constructor">
+            function <span class="apidocSignatureSpan">gemini.gemini_error.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, advice)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.limited_use_set">module gemini.limited_use_set</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.limited_use_set.limited_use_set">
+            function <span class="apidocSignatureSpan">gemini.</span>limited_use_set
+            <span class="apidocSignatureSpan">(useLimit, finalize)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.limited_use_set.prototype">module gemini.limited_use_set.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.limited_use_set.prototype._isOverLimit">
+            function <span class="apidocSignatureSpan">gemini.limited_use_set.prototype.</span>_isOverLimit
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.limited_use_set.prototype.pop">
+            function <span class="apidocSignatureSpan">gemini.limited_use_set.prototype.</span>pop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.limited_use_set.prototype.push">
+            function <span class="apidocSignatureSpan">gemini.limited_use_set.prototype.</span>push
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.no_ref_image_error">module gemini.no_ref_image_error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.no_ref_image_error.no_ref_image_error">
+            function <span class="apidocSignatureSpan">gemini.</span>no_ref_image_error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.no_ref_image_error.__parent">
+            function <span class="apidocSignatureSpan">gemini.no_ref_image_error.</span>__parent
+            <span class="apidocSignatureSpan">(message, originalError)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.no_ref_image_error.prototype">module gemini.no_ref_image_error.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.no_ref_image_error.prototype.__constructor">
+            function <span class="apidocSignatureSpan">gemini.no_ref_image_error.prototype.</span>__constructor
+            <span class="apidocSignatureSpan">(refImagePath, currentPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.no_ref_image_error.prototype.__self">
+            function <span class="apidocSignatureSpan">gemini.no_ref_image_error.prototype.</span>__self
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.no_ref_image_error.prototype.constructor">
+            function <span class="apidocSignatureSpan">gemini.no_ref_image_error.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.pool">module gemini.pool</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.pool.pool">
+            function <span class="apidocSignatureSpan">gemini.</span>pool
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.pool.prototype">module gemini.pool.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.pool.prototype.cancel">
+            function <span class="apidocSignatureSpan">gemini.pool.prototype.</span>cancel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.pool.prototype.freeBrowser">
+            function <span class="apidocSignatureSpan">gemini.pool.prototype.</span>freeBrowser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.pool.prototype.getBrowser">
+            function <span class="apidocSignatureSpan">gemini.pool.prototype.</span>getBrowser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.state_error">module gemini.state_error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.state_error.state_error">
+            function <span class="apidocSignatureSpan">gemini.</span>state_error
+            <span class="apidocSignatureSpan">(message, originalError)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.state_error.prototype">module gemini.state_error.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.state_error.prototype.constructor">
+            function <span class="apidocSignatureSpan">gemini.state_error.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, originalError)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.suite_monitor">module gemini.suite_monitor</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">gemini.suite_monitor.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.suite_monitor">
+            function <span class="apidocSignatureSpan">gemini.</span>suite_monitor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.EventEmitter">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.__parent">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>__parent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.create">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.init">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.listenerCount">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">gemini.suite_monitor.</span>defaultMaxListeners</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.suite_monitor.prototype">module gemini.suite_monitor.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype.__constructor">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>__constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype.__self">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>__self
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype._isCompletedInBrowser">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>_isCompletedInBrowser
+            <span class="apidocSignatureSpan">(browser, suite)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype._markAsCompleted">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>_markAsCompleted
+            <span class="apidocSignatureSpan">(suite, browser)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype._processAwaitingSuites">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>_processAwaitingSuites
+            <span class="apidocSignatureSpan">(browser)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype.constructor">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_monitor.prototype.suiteFinished">
+            function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>suiteFinished
+            <span class="apidocSignatureSpan">(suite, browser)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.suite_util">module gemini.suite_util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.suite_util.shouldSkip">
+            function <span class="apidocSignatureSpan">gemini.suite_util.</span>shouldSkip
+            <span class="apidocSignatureSpan">(suite, browserId)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.temp">module gemini.temp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.temp.attach">
+            function <span class="apidocSignatureSpan">gemini.temp.</span>attach
+            <span class="apidocSignatureSpan">(serializedTemp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.temp.init">
+            function <span class="apidocSignatureSpan">gemini.temp.</span>init
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.temp.path">
+            function <span class="apidocSignatureSpan">gemini.temp.</span>path
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.temp.serialize">
+            function <span class="apidocSignatureSpan">gemini.temp.</span>serialize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.util">module gemini.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.util.isFullPage">
+            function <span class="apidocSignatureSpan">gemini.util.</span>isFullPage
+            <span class="apidocSignatureSpan">(image, page, screenshotMode)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.utils">module gemini.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.utils.requireWithNoCache">
+            function <span class="apidocSignatureSpan">gemini.utils.</span>requireWithNoCache
+            <span class="apidocSignatureSpan">(moduleName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gemini.utils.</span>logger</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gemini.wd_bluebird">module gemini.wd_bluebird</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gemini.wd_bluebird.promiseRemote">
+            function <span class="apidocSignatureSpan">gemini.wd_bluebird.</span>promiseRemote
+            <span class="apidocSignatureSpan">(gridUrl)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini" id="apidoc.module.gemini">module gemini</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.gemini" id="apidoc.element.gemini.gemini">
+        function <span class="apidocSignatureSpan"></span>gemini
+        <span class="apidocSignatureSpan">(config, allowOverrides)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Gemini extends PassthroughEmitter {
+    static create(config, allowOverrides) {
+        return new Gemini(config, allowOverrides);
+    }
+
+    constructor(config, allowOverrides) {
+        super();
+
+        this.config = new Config(config, allowOverrides);
+
+        this.events = Events;
+        this.SuiteCollection = SuiteCollection;
+
+        setupLog(this.config.system.debug);
+        this._loadPlugins();
+    }
+
+    static readRawConfig(filePath) {
+        return Config.readRawConfig(filePath);
+    }
+
+    _run(stateProcessor, paths, options) {
+        if (!options) {
+            //if there are only two arguments, they are
+            //(stateProcessor, options) and paths are
+            //the default.
+            options = paths;
+            paths = undefined;
+        }
+        options = options || {};
+        options.reporters = options.reporters || [];
+
+        temp.init(this.config.system.tempDir);
+
+        const runner = Runner.create(this.config, stateProcessor);
+        const envBrowsers = parseBrowsers(process.env.GEMINI_BROWSERS);
+        const envSkipBrowsers = parseBrowsers(process.env.GEMINI_SKIP_BROWSERS);
+
+        options.browsers = options.browsers || envBrowsers;
+
+        this._passThroughEvents(runner);
+
+        // it is important to require signal handler here in order to guarantee subscribing to &#x22;INTERRUPT&#x22; event
+        require(&#x27;./signal-handler&#x27;).on(Events.INTERRUPT, (data) =&#x3e; {
+            this.emit(Events.INTERRUPT, data);
+
+            runner.cancel();
+        });
+
+        if (options.browsers) {
+            this.checkUnknownBrowsers(options.browsers);
+        }
+
+        const getTests = (source, options) =&#x3e; {
+            return source instanceof SuiteCollection
+                ? Promise.resolve(source)
+                : this.readTests(source, options);
+        };
+
+        return getTests(paths, options)
+            .then((suiteCollection) =&#x3e; {
+                this.checkUnknownBrowsers(envSkipBrowsers);
+
+                const validSkippedBrowsers = this.getValidBrowsers(envSkipBrowsers);
+
+                suiteCollection.skipBrowsers(validSkippedBrowsers);
+                options.reporters.forEach((reporter) =&#x3e; applyReporter(runner, reporter));
+
+                const stats = new RunnerStats(runner);
+
+                return runner.run(suiteCollection)
+                    .then(() =&#x3e; stats.get());
+            });
+    }
+
+    _passThroughEvents(runner) {
+        this.passthroughEvent(runner, _.values(Events));
+    }
+
+    _loadPlugins() {
+        pluginsLoader.load(this, this.config.system.plugins, PREFIX);
+    }
+
+    readTests(paths, options) {
+        if (_.isRegExp(options)) {
+            console.warn(chalk.yellow(
+                `Passing grep to readTests is deprecated. You should pass an object with options: {grep: ${options}}.`
+            ));
+
+            options = {grep: options};
+        } else {
+            options = options || {};
+        }
+
+        options = _.assignIn(options, {paths});
+
+        return q(readTests(this, this.config, options)
+            .then((rootSuite) =&#x3e; {
+                if (options.grep) {
+                    applyGrep_(options.grep, rootSuite);
+                }
+
+                return new SuiteCollection(rootSuite.children);
+            }));
+
+        function applyGrep_(grep, suite) {
+            if (!suite.hasStates) {
+                _.clone(suite.children).forEach((child) =&#x3e; {
+                    applyGrep_(grep, child, suite);
+                });
+            } else {
+                if (!grep.test(suite.fullName)) {
+                    suite.parent.removeChild(suite);
+                }
+            }
+
+            if (!suite.hasStates &#x26;&#x26; !suite.children.length &#x26;&#x26; suite.parent) {
+                suite.parent.removeChild(suite);
+            }
+        }
+    }
+
+    update(paths, options) {
+        return q(this._run(StateProcessor.createScreenUpdater(options), paths, options));
+    }
+
+    test(paths, options) {
+        return q(this._run(StateProcessor.createTester(this.config), paths, options));
+    }
+
+    getScreenshotPath(suite, stateName, browserId) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return /\.yml$/.test(filePath)
+    ? readYAMLFile(filePath)
+    : requireModule(filePath);
+};
+
+function getDefaultConfig() {
+var configFile = _.find(fs.readdirSync(&#x27;./&#x27;), function(file) {
+    return /^\.<span class="apidocCodeKeywordSpan">gemini</span>(\.conf)?\.(yml|js|json)$/.test(file);
+});
+
+if (!configFile) {
+    throw new GeminiError(&#x27;No config found&#x27;);
+}
+
+return path.resolve(configFile);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_config" id="apidoc.element.gemini.browser_config">
+        function <span class="apidocSignatureSpan">gemini.</span>browser_config
+        <span class="apidocSignatureSpan">(id, systemOptions, browserOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BrowserConfig(id, systemOptions, browserOptions) {
+    this.id = id;
+    this.system = systemOptions;
+    _.extend(this, browserOptions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.caching_pool" id="apidoc.element.gemini.caching_pool">
+        function <span class="apidocSignatureSpan">gemini.</span>caching_pool
+        <span class="apidocSignatureSpan">(config, underlyingPool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CachingPool(config, underlyingPool) {
+    this.underlyingPool = underlyingPool;
+    this._caches = {};
+    var _this = this,
+        freeBrowser = underlyingPool.freeBrowser.bind(underlyingPool);
+
+    config.getBrowserIds().forEach(function(id) {
+        var browserConfig = config.forBrowser(id);
+        // browser does not get put in a set on first usages, so if
+        // we want to limit it usage to N times, we must set N-1 limit
+        // for the set.
+        _this._caches[id] = new LimitedUseSet(browserConfig.suitesPerSession - 1, freeBrowser);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.calibrator" id="apidoc.element.gemini.calibrator">
+        function <span class="apidocSignatureSpan">gemini.</span>calibrator
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Calibrator() {
+    this._cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera" id="apidoc.element.gemini.camera">
+        function <span class="apidocSignatureSpan">gemini.</span>camera
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camera = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge" id="apidoc.element.gemini.client_bridge">
+        function <span class="apidocSignatureSpan">gemini.</span>client_bridge
+        <span class="apidocSignatureSpan">(browser, script)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ClientBridge(browser, script) {
+    this._browser = browser;
+    this._script = script;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.gemini_error" id="apidoc.element.gemini.gemini_error">
+        function <span class="apidocSignatureSpan">gemini.</span>gemini_error
+        <span class="apidocSignatureSpan">(message, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GeminiError(message, advice) {
+    Error.captureStackTrace(this, GeminiError);
+    this.name = &#x27;GeminiError&#x27;;
+    this.message = message;
+    this.advice = advice;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.limited_use_set" id="apidoc.element.gemini.limited_use_set">
+        function <span class="apidocSignatureSpan">gemini.</span>limited_use_set
+        <span class="apidocSignatureSpan">(useLimit, finalize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LimitedUseSet(useLimit, finalize) {
+    this._useCounts = new WeakMap();
+    this._useLimit = useLimit;
+    this._finalize = finalize;
+    this._objects = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.no_ref_image_error" id="apidoc.element.gemini.no_ref_image_error">
+        function <span class="apidocSignatureSpan">gemini.</span>no_ref_image_error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">no_ref_image_error = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.pool" id="apidoc.element.gemini.pool">
+        function <span class="apidocSignatureSpan">gemini.</span>pool
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BasicPool() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.state_error" id="apidoc.element.gemini.state_error">
+        function <span class="apidocSignatureSpan">gemini.</span>state_error
+        <span class="apidocSignatureSpan">(message, originalError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateError(message, originalError) {
+    Error.captureStackTrace(this, StateError);
+    this.name = &#x27;StateError&#x27;;
+    this.message = message;
+    this.originalError = originalError;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor" id="apidoc.element.gemini.suite_monitor">
+        function <span class="apidocSignatureSpan">gemini.</span>suite_monitor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">suite_monitor = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.browser_config" id="apidoc.module.gemini.browser_config">module gemini.browser_config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_config.browser_config" id="apidoc.element.gemini.browser_config.browser_config">
+        function <span class="apidocSignatureSpan">gemini.</span>browser_config
+        <span class="apidocSignatureSpan">(id, systemOptions, browserOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BrowserConfig(id, systemOptions, browserOptions) {
+    this.id = id;
+    this.system = systemOptions;
+    _.extend(this, browserOptions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.browser_config.prototype" id="apidoc.module.gemini.browser_config.prototype">module gemini.browser_config.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_config.prototype.getAbsoluteUrl" id="apidoc.element.gemini.browser_config.prototype.getAbsoluteUrl">
+        function <span class="apidocSignatureSpan">gemini.browser_config.prototype.</span>getAbsoluteUrl
+        <span class="apidocSignatureSpan">(relUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAbsoluteUrl = function (relUrl) {
+    return [
+        this.rootUrl.replace(/\/$/, &#x27;&#x27;),
+        relUrl.replace(/^\//, &#x27;&#x27;)
+    ].join(&#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }
+
+            return Promise.reject(e);
+        });
+}
+
+openRelative(relativeURL) {
+    return this.open(this.config.<span class="apidocCodeKeywordSpan">getAbsoluteUrl</span>(relativeURL));
+}
+
+// Zoom reset should be skipped before calibration cause we&#x27;re unable to build client scripts before
+// calibration done. Reset will be executed as 1 of calibration steps.
+open(url, params) {
+    params = _.defaults(params || {}, {
+        resetZoom: true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_config.prototype.getScreenshotPath" id="apidoc.element.gemini.browser_config.prototype.getScreenshotPath">
+        function <span class="apidocSignatureSpan">gemini.browser_config.prototype.</span>getScreenshotPath
+        <span class="apidocSignatureSpan">(suite, state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getScreenshotPath = function (suite, state) {
+    return path.join(this.getScreenshotsDir(suite, state), this.id + &#x27;.png&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+test(paths, options) {
+    return q(this._run(StateProcessor.createTester(this.config), paths, options));
+}
+
+getScreenshotPath(suite, stateName, browserId) {
+    return this.config.forBrowser(browserId).<span class="apidocCodeKeywordSpan">getScreenshotPath</span>(suite, stateName);
+}
+
+getBrowserCapabilites(browserId) {
+    return this.config.forBrowser(browserId).desiredCapabilities;
+}
+
+getValidBrowsers(browsers) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_config.prototype.getScreenshotsDir" id="apidoc.element.gemini.browser_config.prototype.getScreenshotsDir">
+        function <span class="apidocSignatureSpan">gemini.browser_config.prototype.</span>getScreenshotsDir
+        <span class="apidocSignatureSpan">(suite, state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getScreenshotsDir = function (suite, state) {
+    return path.resolve(this.screenshotsDir, getPathForSuite(suite), state);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+BrowserConfig.prototype.getScreenshotsDir = function(suite, state) {
+return path.resolve(this.screenshotsDir, getPathForSuite(suite), state);
+};
+
+BrowserConfig.prototype.getScreenshotPath = function(suite, state) {
+return path.join(this.<span class="apidocCodeKeywordSpan">getScreenshotsDir</span>(suite, state), this.id + &#x27;.png&#x27;);
+};
+
+BrowserConfig.prototype.getAbsoluteUrl = function(relUrl) {
+return [
+    this.rootUrl.replace(/\/$/, &#x27;&#x27;),
+    relUrl.replace(/^\//, &#x27;&#x27;)
+].join(&#x27;/&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.browser_options" id="apidoc.module.gemini.browser_options">module gemini.browser_options</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_options.getPerBrowser" id="apidoc.element.gemini.browser_options.getPerBrowser">
+        function <span class="apidocSignatureSpan">gemini.browser_options.</span>getPerBrowser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&#x3e; {
+    return buildBrowserOptions(provideTopLevelDefault, {
+        desiredCapabilities: option({
+            parseEnv: JSON.parse,
+            parseCli: JSON.parse,
+            defaultValue: null,
+            validate: (value, config) =&#x3e; {
+                if (value === null &#x26;&#x26; config.desiredCapabilities === null) {
+                    throw new GeminiError(&#x27;Browser must have desired capabilities set&#x27;);
+                } else if (!isOptionalObject(value)) {
+                    throw new GeminiError(&#x27;desiredCapabilities should be null or object&#x27;);
+                }
+            },
+            map: (value, config) =&#x3e; _.extend({}, config.desiredCapabilities, value)
+        })
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }),
+
+            ctx: anyObject()
+        }),
+
+        sets: coreOptions.sets,
+
+        browsers: map(section(browserOptions.<span class="apidocCodeKeywordSpan">getPerBrowser</span>()))
+    }))
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.browser_options.getTopLevel" id="apidoc.element.gemini.browser_options.getTopLevel">
+        function <span class="apidocSignatureSpan">gemini.browser_options.</span>getTopLevel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&#x3e; {
+    const defaults = {
+        gridUrl: &#x27;http://localhost:4444/wd/hub&#x27;,
+        calibrate: true,
+        httpTimeout: &#x27;default&#x27;,
+        sessionRequestTimeout: null,
+        sessionQuitTimeout: null,
+        screenshotsDir: &#x27;gemini/screens&#x27;,
+        tolerance: 2.3,
+        sessionsPerBrowser: 1,
+        suitesPerSession: Infinity,
+        windowSize: null,
+        retry: 0,
+        screenshotMode: &#x27;auto&#x27;,
+        compositeImage: false
+    };
+
+    const provideDefault = (key) =&#x3e; defaults[key];
+
+    return buildBrowserOptions(provideDefault, {
+        desiredCapabilities: option({
+            defaultValue: null,
+            parseEnv: JSON.parse,
+            parseCli: JSON.parse,
+            validate: (value) =&#x3e; {
+                if (!isOptionalObject(value)) {
+                    throw new GeminiError(&#x27;Top-level desiredCapabilities should be null or object&#x27;);
+                }
+            }
+        })
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const positiveIntegerOption = util.positiveIntegerOption;
+const root = configparser.root;
+const section = configparser.section;
+const option = configparser.option;
+const map = configparser.map;
+
+module.exports = root(
+    section(_.extend(browserOptions.<span class="apidocCodeKeywordSpan">getTopLevel</span>(), {
+        system: section({
+projectRoot: option({
+    validate: is(&#x27;string&#x27;),
+    map: _.ary(path.resolve, 1)
+}),
+
+sourceRoot: option({
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.caching_pool" id="apidoc.module.gemini.caching_pool">module gemini.caching_pool</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.caching_pool.caching_pool" id="apidoc.element.gemini.caching_pool.caching_pool">
+        function <span class="apidocSignatureSpan">gemini.</span>caching_pool
+        <span class="apidocSignatureSpan">(config, underlyingPool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CachingPool(config, underlyingPool) {
+    this.underlyingPool = underlyingPool;
+    this._caches = {};
+    var _this = this,
+        freeBrowser = underlyingPool.freeBrowser.bind(underlyingPool);
+
+    config.getBrowserIds().forEach(function(id) {
+        var browserConfig = config.forBrowser(id);
+        // browser does not get put in a set on first usages, so if
+        // we want to limit it usage to N times, we must set N-1 limit
+        // for the set.
+        _this._caches[id] = new LimitedUseSet(browserConfig.suitesPerSession - 1, freeBrowser);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.caching_pool.super_" id="apidoc.element.gemini.caching_pool.super_">
+        function <span class="apidocSignatureSpan">gemini.caching_pool.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BasicPool() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.caching_pool.prototype" id="apidoc.module.gemini.caching_pool.prototype">module gemini.caching_pool.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.caching_pool.prototype.cancel" id="apidoc.element.gemini.caching_pool.prototype.cancel">
+        function <span class="apidocSignatureSpan">gemini.caching_pool.prototype.</span>cancel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancel = function () {
+    log(&#x27;cancel&#x27;);
+    this.underlyingPool.cancel();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this._passThroughEvents(runner);
+
+// it is important to require signal handler here in order to guarantee subscribing to &#x22;INTERRUPT&#x22; event
+require(&#x27;./signal-handler&#x27;).on(Events.INTERRUPT, (data) =&#x3e; {
+    this.emit(Events.INTERRUPT, data);
+
+    runner.<span class="apidocCodeKeywordSpan">cancel</span>();
+});
+
+if (options.browsers) {
+    this.checkUnknownBrowsers(options.browsers);
+}
+
+const getTests = (source, options) =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.caching_pool.prototype.freeBrowser" id="apidoc.element.gemini.caching_pool.prototype.freeBrowser">
+        function <span class="apidocSignatureSpan">gemini.caching_pool.prototype.</span>freeBrowser
+        <span class="apidocSignatureSpan">(browser, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">freeBrowser = function (browser, options) {
+    log(&#x27;free %o&#x27;, browser);
+    const shouldBeFreed = options &#x26;&#x26; options.force;
+    return shouldBeFreed
+        ? this.underlyingPool.freeBrowser(browser)
+        : this._caches[browser.id].push(browser);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            return Promise.reject(new CancelledError());
+        }
+
+        this._activeSessions[browser.sessionId] = browser;
+    })
+    .then(() =&#x3e; browser.reset())
+    .thenReturn(browser)
+    .catch((e) =&#x3e; this.<span class="apidocCodeKeywordSpan">freeBrowser</span>(browser).then(() =&#x3e; Promise.reject(e)));
+    }
+
+    freeBrowser(browser) {
+delete this._activeSessions[browser.sessionId];
+log(`stop browser ${browser.id}`);
+
+return this._emitter.emitAndWait(Events.STOP_BROWSER, browser)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.caching_pool.prototype.getBrowser" id="apidoc.element.gemini.caching_pool.prototype.getBrowser">
+        function <span class="apidocSignatureSpan">gemini.caching_pool.prototype.</span>getBrowser
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBrowser = function (id) {
+    log(&#x27;request for %s&#x27;, id);
+    var browser = this._caches[id].pop();
+    if (!browser) {
+        log(&#x27;no cached browser, requesting new&#x27;);
+        return this.underlyingPool.getBrowser(id);
+    }
+
+    log(&#x27;has cached browser %o&#x27;, browser);
+    return browser.reset()
+        .catch(function(e) {
+            var reject = Promise.reject.bind(null, e);
+            return this.underlyingPool.freeBrowser(browser)
+                .then(reject, reject);
+        }.bind(this)).thenReturn(browser);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+util.inherits(CachingPool, Pool);
+
+CachingPool.prototype.getBrowser = function(id) {
+log(&#x27;request for %s&#x27;, id);
+var browser = this._caches[id].pop();
+if (!browser) {
+    log(&#x27;no cached browser, requesting new&#x27;);
+    return this.underlyingPool.<span class="apidocCodeKeywordSpan">getBrowser</span>(id);
+}
+
+log(&#x27;has cached browser %o&#x27;, browser);
+return browser.reset()
+    .catch(function(e) {
+        var reject = Promise.reject.bind(null, e);
+        return this.underlyingPool.freeBrowser(browser)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.calibrator" id="apidoc.module.gemini.calibrator">module gemini.calibrator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.calibrator.calibrator" id="apidoc.element.gemini.calibrator.calibrator">
+        function <span class="apidocSignatureSpan">gemini.</span>calibrator
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Calibrator() {
+    this._cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.calibrator.prototype" id="apidoc.module.gemini.calibrator.prototype">module gemini.calibrator.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.calibrator.prototype._analyzeImage" id="apidoc.element.gemini.calibrator.prototype._analyzeImage">
+        function <span class="apidocSignatureSpan">gemini.calibrator.prototype.</span>_analyzeImage
+        <span class="apidocSignatureSpan">(image, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_analyzeImage = function (image, params) {
+    var imageHeight = image.getSize().height;
+
+    for (var y = 0; y &#x3c; imageHeight; y++) {
+        var result = analyzeRow(y, image, params);
+
+        if (result) {
+            return result;
+        }
+    }
+
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        })
+        .then(function(features) {
+return [features, browser.captureViewportImage()];
+        })
+        .spread(function(features, image) {
+var innerWidth = features.innerWidth,
+    hasPixelRatio = !!(features.pixelRatio &#x26;&#x26; features.pixelRatio &#x3e; 1.0),
+    imageFeatures = _this.<span class="apidocCodeKeywordSpan">_analyzeImage</span>(image, {calculateColorLength: hasPixelRatio});
+
+if (!imageFeatures) {
+    return Promise.reject(new GeminiError(
+        &#x27;Could not calibrate. This could be due to calibration page has failed to open properly&#x27;
+    ));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.calibrator.prototype.calibrate" id="apidoc.element.gemini.calibrator.prototype.calibrate">
+        function <span class="apidocSignatureSpan">gemini.calibrator.prototype.</span>calibrate
+        <span class="apidocSignatureSpan">(browser)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calibrate = function (browser) {
+    var _this = this;
+    if (this._cache[browser.id]) {
+        return Promise.resolve(this._cache[browser.id]);
+    }
+    return browser.open(&#x27;about:blank&#x27;, {resetZoom: false})
+        .then(function() {
+            return browser.evalScript(clientScriptCalibrate);
+        })
+        .then(function(features) {
+            return [features, browser.captureViewportImage()];
+        })
+        .spread(function(features, image) {
+            var innerWidth = features.innerWidth,
+                hasPixelRatio = !!(features.pixelRatio &#x26;&#x26; features.pixelRatio &#x3e; 1.0),
+                imageFeatures = _this._analyzeImage(image, {calculateColorLength: hasPixelRatio});
+
+            if (!imageFeatures) {
+                return Promise.reject(new GeminiError(
+                    &#x27;Could not calibrate. This could be due to calibration page has failed to open properly&#x27;
+                ));
+            }
+
+            _.extend(features, {
+                top: imageFeatures.viewportStart.y,
+                left: imageFeatures.viewportStart.x,
+                usePixelRatio: hasPixelRatio &#x26;&#x26; imageFeatures.colorLength &#x3e; innerWidth
+            });
+
+            _this._cache[browser.id] = features;
+            return features;
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+scrollBy(x, y) {
+    return this._camera.scroll(x, y);
+}
+
+_setCalibration(calibration) {
+    this._calibration = calibration;
+    this._camera.<span class="apidocCodeKeywordSpan">calibrate</span>(calibration);
+}
+
+_setHttpTimeout() {
+    return this._configureHttp(this.config.httpTimeout);
+}
+
+_configureHttp(timeout) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.camera" id="apidoc.module.gemini.camera">module gemini.camera</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.camera" id="apidoc.element.gemini.camera.camera">
+        function <span class="apidocSignatureSpan">gemini.</span>camera
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camera = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.camera.prototype" id="apidoc.module.gemini.camera.prototype">module gemini.camera.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype.__constructor" id="apidoc.element.gemini.camera.prototype.__constructor">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>__constructor
+        <span class="apidocSignatureSpan">(wdRemote, screenshotMode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__constructor = function (wdRemote, screenshotMode) {
+    this._wdRemote = wdRemote;
+    this._screenshotMode = screenshotMode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype.__self" id="apidoc.element.gemini.camera.prototype.__self">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>__self
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__self = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype._applyCalibration" id="apidoc.element.gemini.camera.prototype._applyCalibration">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_applyCalibration
+        <span class="apidocSignatureSpan">(image)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_applyCalibration = function (image) {
+    if (!this._calibration) {
+        return image;
+    }
+
+    return image.crop({
+        left: this._calibration.left,
+        top: this._calibration.top,
+        width: image.getSize().width - this._calibration.left,
+        height: image.getSize().height - this._calibration.top
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+_takeScreenshot: function(page) {
+    var _this = this;
+    return this._wdRemote.takeScreenshot()
+        .then(function(base64) {
+            var image = Image.fromBase64(base64);
+            return _this.<span class="apidocCodeKeywordSpan">_applyCalibration</span>(image);
+        })
+        .then(function(image) {
+            return _this._cropToViewport(image, page);
+        });
+},
+
+_takeScreenshotWithNativeContext: function(page) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype._cropToViewport" id="apidoc.element.gemini.camera.prototype._cropToViewport">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_cropToViewport
+        <span class="apidocSignatureSpan">(image, page)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_cropToViewport = function (image, page) {
+    if (!page) {
+        return image;
+    }
+
+    const isFullPage = util.isFullPage(image, page, this._screenshotMode);
+    let cropArea = _.clone(page.viewport);
+
+    if (this._screenshotMode === &#x27;viewport&#x27; || !isFullPage) {
+        cropArea = _.extend(cropArea, {
+            top: 0,
+            left: 0
+        });
+    }
+
+    return image.crop(cropArea, {scaleFactor: page.pixelRatio});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var _this = this;
+    return this._wdRemote.takeScreenshot()
+        .then(function(base64) {
+            var image = Image.fromBase64(base64);
+            return _this._applyCalibration(image);
+        })
+        .then(function(image) {
+            return _this.<span class="apidocCodeKeywordSpan">_cropToViewport</span>(image, page);
+        });
+},
+
+_takeScreenshotWithNativeContext: function(page) {
+    var _this = this;
+    return this._wdRemote.currentContext()
+        .then(function(oldContext) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype._takeScreenshot" id="apidoc.element.gemini.camera.prototype._takeScreenshot">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_takeScreenshot
+        <span class="apidocSignatureSpan">(page)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_takeScreenshot = function (page) {
+    var _this = this;
+    return this._wdRemote.takeScreenshot()
+        .then(function(base64) {
+            var image = Image.fromBase64(base64);
+            return _this._applyCalibration(image);
+        })
+        .then(function(image) {
+            return _this._cropToViewport(image, page);
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype._takeScreenshotWithNativeContext" id="apidoc.element.gemini.camera.prototype._takeScreenshotWithNativeContext">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_takeScreenshotWithNativeContext
+        <span class="apidocSignatureSpan">(page)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_takeScreenshotWithNativeContext = function (page) {
+    var _this = this;
+    return this._wdRemote.currentContext()
+        .then(function(oldContext) {
+            return _this._wdRemote.context(&#x27;NATIVE_APP&#x27;)
+                .then(_this._takeScreenshot.bind(_this, page))
+                .finally(function() {
+                    return _this._wdRemote.context(oldContext);
+                });
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype._tryScreenshotMethod" id="apidoc.element.gemini.camera.prototype._tryScreenshotMethod">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>_tryScreenshotMethod
+        <span class="apidocSignatureSpan">(method, page)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_tryScreenshotMethod = function (method, page) {
+    var _this = this;
+    return this[method](page)
+        .then(function(screenshot) {
+            _this.captureViewportImage = _this[method];
+            return screenshot;
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+calibrate: function(calibration) {
+    this._calibration = calibration;
+},
+
+captureViewportImage: function(page) {
+    var _this = this;
+    return this.<span class="apidocCodeKeywordSpan">_tryScreenshotMethod</span>(&#x27;_takeScreenshot&#x27;, page)
+        .catch(function(originalError) {
+            return _this._tryScreenshotMethod(&#x27;_takeScreenshotWithNativeContext&#x27;, page)
+                .catch(function() {
+                    // if _takeScreenshotWithNativeContext fails too, the original error
+                    // most likely was not related to the different Appium contexts and
+                    // it is more useful to report it instead of second one
+                    return Promise.reject(originalError);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype.calibrate" id="apidoc.element.gemini.camera.prototype.calibrate">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>calibrate
+        <span class="apidocSignatureSpan">(calibration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calibrate = function (calibration) {
+    this._calibration = calibration;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+scrollBy(x, y) {
+    return this._camera.scroll(x, y);
+}
+
+_setCalibration(calibration) {
+    this._calibration = calibration;
+    this._camera.<span class="apidocCodeKeywordSpan">calibrate</span>(calibration);
+}
+
+_setHttpTimeout() {
+    return this._configureHttp(this.config.httpTimeout);
+}
+
+_configureHttp(timeout) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype.captureViewportImage" id="apidoc.element.gemini.camera.prototype.captureViewportImage">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>captureViewportImage
+        <span class="apidocSignatureSpan">(page)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">captureViewportImage = function (page) {
+    var _this = this;
+    return this._tryScreenshotMethod(&#x27;_takeScreenshot&#x27;, page)
+        .catch(function(originalError) {
+            return _this._tryScreenshotMethod(&#x27;_takeScreenshotWithNativeContext&#x27;, page)
+                .catch(function() {
+                    // if _takeScreenshotWithNativeContext fails too, the original error
+                    // most likely was not related to the different Appium contexts and
+                    // it is more useful to report it instead of second one
+                    return Promise.reject(originalError);
+                });
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return Promise.resolve(this._cache[browser.id]);
+    }
+    return browser.open(&#x27;about:blank&#x27;, {resetZoom: false})
+        .then(function() {
+return browser.evalScript(clientScriptCalibrate);
+        })
+        .then(function(features) {
+return [features, browser.<span class="apidocCodeKeywordSpan">captureViewportImage</span>()];
+        })
+        .spread(function(features, image) {
+var innerWidth = features.innerWidth,
+    hasPixelRatio = !!(features.pixelRatio &#x26;&#x26; features.pixelRatio &#x3e; 1.0),
+    imageFeatures = _this._analyzeImage(image, {calculateColorLength: hasPixelRatio});
+
+if (!imageFeatures) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype.constructor" id="apidoc.element.gemini.camera.prototype.constructor">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.camera.prototype.scroll" id="apidoc.element.gemini.camera.prototype.scroll">
+        function <span class="apidocSignatureSpan">gemini.camera.prototype.</span>scroll
+        <span class="apidocSignatureSpan">(x, y)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scroll = function (x, y) {
+    return this._wdRemote.execute(`window.scrollBy(${x},${y})`);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        config: _.pick(this.config, props),
+        sessionId: this.sessionId,
+        calibration: this._calibration
+    };
+}
+
+scrollBy(x, y) {
+    return this._camera.<span class="apidocCodeKeywordSpan">scroll</span>(x, y);
+}
+
+_setCalibration(calibration) {
+    this._calibration = calibration;
+    this._camera.calibrate(calibration);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.client_bridge" id="apidoc.module.gemini.client_bridge">module gemini.client_bridge</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge.client_bridge" id="apidoc.element.gemini.client_bridge.client_bridge">
+        function <span class="apidocSignatureSpan">gemini.</span>client_bridge
+        <span class="apidocSignatureSpan">(browser, script)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ClientBridge(browser, script) {
+    this._browser = browser;
+    this._script = script;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.client_bridge.prototype" id="apidoc.module.gemini.client_bridge.prototype">module gemini.client_bridge.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge.prototype._callCommand" id="apidoc.element.gemini.client_bridge.prototype._callCommand">
+        function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_callCommand
+        <span class="apidocSignatureSpan">(command, injectAllowed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_callCommand = function (command, injectAllowed) {
+    var _this = this;
+    return this._browser.evalScript(command)
+        .then(function(result) {
+            if (!result || !result.error) {
+                return Promise.resolve(result);
+            }
+
+            if (result.error !== NO_CLIENT_FUNC) {
+                return Promise.reject(new StateError(result.message));
+            }
+
+            if (injectAllowed) {
+                return _this._inject()
+                    .then(function() {
+                        return _this._callCommand(command, false);
+                    });
+            }
+            return Promise.reject(new StateError(&#x27;Unable to inject gemini client script&#x27;));
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * @param {String} name
+ * @param {Array} [args]
+ */
+ClientBridge.prototype.call = function(name, args) {
+    args = args || [];
+    return this.<span class="apidocCodeKeywordSpan">_callCommand</span>(this._clientMethodCommand(name, args), true);
+};
+
+/**
+ * @param {String} command
+ * @param {Boolean} shouldInject
+ */
+ClientBridge.prototype._callCommand = function(command, injectAllowed) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge.prototype._clientMethodCommand" id="apidoc.element.gemini.client_bridge.prototype._clientMethodCommand">
+        function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_clientMethodCommand
+        <span class="apidocSignatureSpan">(name, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_clientMethodCommand = function (name, args) {
+    var call = util.format(&#x27;__gemini.%s(%s)&#x27;,
+        name,
+        args.map(JSON.stringify).join(&#x27;, &#x27;)
+    );
+    return this._guardClientCall(call);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * @param {String} name
+ * @param {Array} [args]
+ */
+ClientBridge.prototype.call = function(name, args) {
+    args = args || [];
+    return this._callCommand(this.<span class="apidocCodeKeywordSpan">_clientMethodCommand</span>(name, args), true);
+};
+
+/**
+ * @param {String} command
+ * @param {Boolean} shouldInject
+ */
+ClientBridge.prototype._callCommand = function(command, injectAllowed) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge.prototype._guardClientCall" id="apidoc.element.gemini.client_bridge.prototype._guardClientCall">
+        function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_guardClientCall
+        <span class="apidocSignatureSpan">(call)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_guardClientCall = function (call) {
+    return util.format(
+        &#x27;typeof __gemini !== &#x22;undefined&#x22;? %s : {error: &#x22;%s&#x22;}&#x27;,
+        call,
+        NO_CLIENT_FUNC
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Array} args
+ */
+ClientBridge.prototype._clientMethodCommand = function(name, args) {
+var call = util.format(&#x27;__gemini.%s(%s)&#x27;,
+    name,
+    args.map(JSON.stringify).join(&#x27;, &#x27;)
+);
+return this.<span class="apidocCodeKeywordSpan">_guardClientCall</span>(call);
+};
+
+/**
+ * @param {String} call
+ */
+ClientBridge.prototype._guardClientCall = function(call) {
+return util.format(
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge.prototype._inject" id="apidoc.element.gemini.client_bridge.prototype._inject">
+        function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>_inject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_inject = function () {
+    return this._browser.injectScript(this._script);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }
+
+            if (result.error !== NO_CLIENT_FUNC) {
+                return Promise.reject(new StateError(result.message));
+            }
+
+            if (injectAllowed) {
+                return _this.<span class="apidocCodeKeywordSpan">_inject</span>()
+                    .then(function() {
+                        return _this._callCommand(command, false);
+                    });
+            }
+            return Promise.reject(new StateError(&#x27;Unable to inject gemini client script&#x27;));
+        });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.client_bridge.prototype.call" id="apidoc.element.gemini.client_bridge.prototype.call">
+        function <span class="apidocSignatureSpan">gemini.client_bridge.prototype.</span>call
+        <span class="apidocSignatureSpan">(name, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">call = function (name, args) {
+    args = args || [];
+    return this._callCommand(this._clientMethodCommand(name, args), true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+enableAll() {
+    return this._applyToTopLevel(this.enable);
+}
+
+_applyToTopLevel(method) {
+    this.topLevelSuites().forEach((suite) =&#x3e; method.<span class="apidocCodeKeywordSpan">call</span>(this, suite));
+
+    return this;
+}
+
+disable(suite, opts) {
+    this._applyRecursive(this._disableEntity, suite, opts);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.config_reader" id="apidoc.module.gemini.config_reader">module gemini.config_reader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.config_reader.read" id="apidoc.element.gemini.config_reader.read">
+        function <span class="apidocSignatureSpan">gemini.config_reader.</span>read
+        <span class="apidocSignatureSpan">(filePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(filePath) =&#x3e; {
+    filePath = filePath || getDefaultConfig();
+
+    return /\.yml$/.test(filePath)
+        ? readYAMLFile(filePath)
+        : requireModule(filePath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.deprecations" id="apidoc.module.gemini.deprecations">module gemini.deprecations</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.deprecations.checkForDeprecations" id="apidoc.element.gemini.deprecations.checkForDeprecations">
+        function <span class="apidocSignatureSpan">gemini.deprecations.</span>checkForDeprecations
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkForDeprecations = function () {
+    checkForRemovedOptions();
+    checkForRemovedEnvVars();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.errors" id="apidoc.module.gemini.errors">module gemini.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.errors.handleErrors" id="apidoc.element.gemini.errors.handleErrors">
+        function <span class="apidocSignatureSpan">gemini.errors.</span>handleErrors
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function handleErrors(error) {
+    printErrorHeader(error);
+    if (error instanceof GeminiError) {
+        handleGeminiError(error);
+    } else if (error.status === 13) {
+        //unknow wd error
+        handleUnknownWdError(error);
+    } else {
+        console.error(error.stack || error.message);
+    }
+    // exit code
+    return 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.errors.handleUncaughtExceptions" id="apidoc.element.gemini.errors.handleUncaughtExceptions">
+        function <span class="apidocSignatureSpan">gemini.errors.</span>handleUncaughtExceptions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function handleUncaughtExceptions() {
+    process.on(&#x27;uncaughtException&#x27;, function(error) {
+        process.exit(handleErrors(error));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.gemini_error" id="apidoc.module.gemini.gemini_error">module gemini.gemini_error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.gemini_error.gemini_error" id="apidoc.element.gemini.gemini_error.gemini_error">
+        function <span class="apidocSignatureSpan">gemini.</span>gemini_error
+        <span class="apidocSignatureSpan">(message, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GeminiError(message, advice) {
+    Error.captureStackTrace(this, GeminiError);
+    this.name = &#x27;GeminiError&#x27;;
+    this.message = message;
+    this.advice = advice;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.gemini_error.prototype" id="apidoc.module.gemini.gemini_error.prototype">module gemini.gemini_error.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.gemini_error.prototype.constructor" id="apidoc.element.gemini.gemini_error.prototype.constructor">
+        function <span class="apidocSignatureSpan">gemini.gemini_error.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GeminiError(message, advice) {
+    Error.captureStackTrace(this, GeminiError);
+    this.name = &#x27;GeminiError&#x27;;
+    this.message = message;
+    this.advice = advice;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.limited_use_set" id="apidoc.module.gemini.limited_use_set">module gemini.limited_use_set</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.limited_use_set.limited_use_set" id="apidoc.element.gemini.limited_use_set.limited_use_set">
+        function <span class="apidocSignatureSpan">gemini.</span>limited_use_set
+        <span class="apidocSignatureSpan">(useLimit, finalize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LimitedUseSet(useLimit, finalize) {
+    this._useCounts = new WeakMap();
+    this._useLimit = useLimit;
+    this._finalize = finalize;
+    this._objects = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.limited_use_set.prototype" id="apidoc.module.gemini.limited_use_set.prototype">module gemini.limited_use_set.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.limited_use_set.prototype._isOverLimit" id="apidoc.element.gemini.limited_use_set.prototype._isOverLimit">
+        function <span class="apidocSignatureSpan">gemini.limited_use_set.prototype.</span>_isOverLimit
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isOverLimit = function (value) {
+    if (this._useLimit === 0) {
+        return true;
+    }
+    return this._useCounts.has(value) &#x26;&#x26; this._useCounts.get(value) &#x3e;= this._useLimit;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._useLimit = useLimit;
+    this._finalize = finalize;
+    this._objects = [];
+}
+
+LimitedUseSet.prototype.push = function(value) {
+    log(&#x27;push&#x27;, value);
+    if (this.<span class="apidocCodeKeywordSpan">_isOverLimit</span>(value)) {
+        log(&#x27;over limit, finalizing&#x27;);
+        return this._finalize(value);
+    }
+    log(&#x27;under limit&#x27;);
+    this._objects.push(value);
+    return Promise.resolve();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.limited_use_set.prototype.pop" id="apidoc.element.gemini.limited_use_set.prototype.pop">
+        function <span class="apidocSignatureSpan">gemini.limited_use_set.prototype.</span>pop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pop = function () {
+    if (this._objects.length === 0) {
+        return null;
+    }
+    var result = this._objects.pop(),
+        useCount = this._useCounts.get(result) || 0;
+    log(&#x27;popping %o&#x27;, result);
+    log(&#x27;previous use count %d&#x27;, useCount);
+    this._useCounts.set(result, useCount + 1);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+}
+
+util.inherits(CachingPool, Pool);
+
+CachingPool.prototype.getBrowser = function(id) {
+log(&#x27;request for %s&#x27;, id);
+var browser = this._caches[id].<span class="apidocCodeKeywordSpan">pop</span>();
+if (!browser) {
+    log(&#x27;no cached browser, requesting new&#x27;);
+    return this.underlyingPool.getBrowser(id);
+}
+
+log(&#x27;has cached browser %o&#x27;, browser);
+return browser.reset()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.limited_use_set.prototype.push" id="apidoc.element.gemini.limited_use_set.prototype.push">
+        function <span class="apidocSignatureSpan">gemini.limited_use_set.prototype.</span>push
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (value) {
+    log(&#x27;push&#x27;, value);
+    if (this._isOverLimit(value)) {
+        log(&#x27;over limit, finalizing&#x27;);
+        return this._finalize(value);
+    }
+    log(&#x27;under limit&#x27;);
+    this._objects.push(value);
+    return Promise.resolve();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = class SuiteCollection {
+constructor(suites) {
+    this._suites = _.clone(suites) || [];
+    this._originalBrowsers = {};
+}
+
+add(suite) {
+    this._suites.<span class="apidocCodeKeywordSpan">push</span>(suite);
+    return this;
+}
+
+clone() {
+    const clonedSuites = this._suites.map((suite) =&#x3e; suite.clone());
+    return new SuiteCollection(clonedSuites);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.no_ref_image_error" id="apidoc.module.gemini.no_ref_image_error">module gemini.no_ref_image_error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.no_ref_image_error.no_ref_image_error" id="apidoc.element.gemini.no_ref_image_error.no_ref_image_error">
+        function <span class="apidocSignatureSpan">gemini.</span>no_ref_image_error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">no_ref_image_error = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.no_ref_image_error.__parent" id="apidoc.element.gemini.no_ref_image_error.__parent">
+        function <span class="apidocSignatureSpan">gemini.no_ref_image_error.</span>__parent
+        <span class="apidocSignatureSpan">(message, originalError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateError(message, originalError) {
+    Error.captureStackTrace(this, StateError);
+    this.name = &#x27;StateError&#x27;;
+    this.message = message;
+    this.originalError = originalError;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.no_ref_image_error.prototype" id="apidoc.module.gemini.no_ref_image_error.prototype">module gemini.no_ref_image_error.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.no_ref_image_error.prototype.__constructor" id="apidoc.element.gemini.no_ref_image_error.prototype.__constructor">
+        function <span class="apidocSignatureSpan">gemini.no_ref_image_error.prototype.</span>__constructor
+        <span class="apidocSignatureSpan">(refImagePath, currentPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__constructor = function (refImagePath, currentPath) {
+    this.name = &#x27;NoRefImageError&#x27;;
+    this.message = &#x27;Can not find reference image at &#x27; + refImagePath + &#x27;.\n&#x27; +
+        &#x27;Run `gemini update` command to capture all reference images.&#x27;;
+
+    this.currentPath = currentPath;
+    this.refImagePath = refImagePath;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.no_ref_image_error.prototype.__self" id="apidoc.element.gemini.no_ref_image_error.prototype.__self">
+        function <span class="apidocSignatureSpan">gemini.no_ref_image_error.prototype.</span>__self
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__self = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.no_ref_image_error.prototype.constructor" id="apidoc.element.gemini.no_ref_image_error.prototype.constructor">
+        function <span class="apidocSignatureSpan">gemini.no_ref_image_error.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.pool" id="apidoc.module.gemini.pool">module gemini.pool</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.pool.pool" id="apidoc.element.gemini.pool.pool">
+        function <span class="apidocSignatureSpan">gemini.</span>pool
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BasicPool() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.pool.prototype" id="apidoc.module.gemini.pool.prototype">module gemini.pool.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.pool.prototype.cancel" id="apidoc.element.gemini.pool.prototype.cancel">
+        function <span class="apidocSignatureSpan">gemini.pool.prototype.</span>cancel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancel = function () {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this._passThroughEvents(runner);
+
+// it is important to require signal handler here in order to guarantee subscribing to &#x22;INTERRUPT&#x22; event
+require(&#x27;./signal-handler&#x27;).on(Events.INTERRUPT, (data) =&#x3e; {
+    this.emit(Events.INTERRUPT, data);
+
+    runner.<span class="apidocCodeKeywordSpan">cancel</span>();
+});
+
+if (options.browsers) {
+    this.checkUnknownBrowsers(options.browsers);
+}
+
+const getTests = (source, options) =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.pool.prototype.freeBrowser" id="apidoc.element.gemini.pool.prototype.freeBrowser">
+        function <span class="apidocSignatureSpan">gemini.pool.prototype.</span>freeBrowser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">freeBrowser = function () {
+    return Promise.resolve();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            return Promise.reject(new CancelledError());
+        }
+
+        this._activeSessions[browser.sessionId] = browser;
+    })
+    .then(() =&#x3e; browser.reset())
+    .thenReturn(browser)
+    .catch((e) =&#x3e; this.<span class="apidocCodeKeywordSpan">freeBrowser</span>(browser).then(() =&#x3e; Promise.reject(e)));
+    }
+
+    freeBrowser(browser) {
+delete this._activeSessions[browser.sessionId];
+log(`stop browser ${browser.id}`);
+
+return this._emitter.emitAndWait(Events.STOP_BROWSER, browser)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.pool.prototype.getBrowser" id="apidoc.element.gemini.pool.prototype.getBrowser">
+        function <span class="apidocSignatureSpan">gemini.pool.prototype.</span>getBrowser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBrowser = function () {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+util.inherits(CachingPool, Pool);
+
+CachingPool.prototype.getBrowser = function(id) {
+log(&#x27;request for %s&#x27;, id);
+var browser = this._caches[id].pop();
+if (!browser) {
+    log(&#x27;no cached browser, requesting new&#x27;);
+    return this.underlyingPool.<span class="apidocCodeKeywordSpan">getBrowser</span>(id);
+}
+
+log(&#x27;has cached browser %o&#x27;, browser);
+return browser.reset()
+    .catch(function(e) {
+        var reject = Promise.reject.bind(null, e);
+        return this.underlyingPool.freeBrowser(browser)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.state_error" id="apidoc.module.gemini.state_error">module gemini.state_error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.state_error.state_error" id="apidoc.element.gemini.state_error.state_error">
+        function <span class="apidocSignatureSpan">gemini.</span>state_error
+        <span class="apidocSignatureSpan">(message, originalError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateError(message, originalError) {
+    Error.captureStackTrace(this, StateError);
+    this.name = &#x27;StateError&#x27;;
+    this.message = message;
+    this.originalError = originalError;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.state_error.prototype" id="apidoc.module.gemini.state_error.prototype">module gemini.state_error.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.state_error.prototype.constructor" id="apidoc.element.gemini.state_error.prototype.constructor">
+        function <span class="apidocSignatureSpan">gemini.state_error.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, originalError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateError(message, originalError) {
+    Error.captureStackTrace(this, StateError);
+    this.name = &#x27;StateError&#x27;;
+    this.message = message;
+    this.originalError = originalError;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.suite_monitor" id="apidoc.module.gemini.suite_monitor">module gemini.suite_monitor</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.suite_monitor" id="apidoc.element.gemini.suite_monitor.suite_monitor">
+        function <span class="apidocSignatureSpan">gemini.</span>suite_monitor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">suite_monitor = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.EventEmitter" id="apidoc.element.gemini.suite_monitor.EventEmitter">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.__parent" id="apidoc.element.gemini.suite_monitor.__parent">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>__parent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.create" id="apidoc.element.gemini.suite_monitor.create">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+    return new SuiteMonitor();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    paths = undefined;
+}
+options = options || {};
+options.reporters = options.reporters || [];
+
+temp.init(this.config.system.tempDir);
+
+const runner = Runner.<span class="apidocCodeKeywordSpan">create</span>(this.config, stateProcessor);
+const envBrowsers = parseBrowsers(process.env.GEMINI_BROWSERS);
+const envSkipBrowsers = parseBrowsers(process.env.GEMINI_SKIP_BROWSERS);
+
+options.browsers = options.browsers || envBrowsers;
+
+this._passThroughEvents(runner);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.init" id="apidoc.element.gemini.suite_monitor.init">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require(&#x27;domain&#x27;);
+    if (domain.active &#x26;&#x26; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //the default.
+    options = paths;
+    paths = undefined;
+}
+options = options || {};
+options.reporters = options.reporters || [];
+
+temp.<span class="apidocCodeKeywordSpan">init</span>(this.config.system.tempDir);
+
+const runner = Runner.create(this.config, stateProcessor);
+const envBrowsers = parseBrowsers(process.env.GEMINI_BROWSERS);
+const envSkipBrowsers = parseBrowsers(process.env.GEMINI_SKIP_BROWSERS);
+
+options.browsers = options.browsers || envBrowsers;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.listenerCount" id="apidoc.element.gemini.suite_monitor.listenerCount">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === &#x27;function&#x27;) {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.suite_monitor.prototype" id="apidoc.module.gemini.suite_monitor.prototype">module gemini.suite_monitor.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype.__constructor" id="apidoc.element.gemini.suite_monitor.prototype.__constructor">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>__constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__constructor = function () {
+    this.awaiting = {};
+    this.complete = new WeakMap();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype.__self" id="apidoc.element.gemini.suite_monitor.prototype.__self">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>__self
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__self = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype._isCompletedInBrowser" id="apidoc.element.gemini.suite_monitor.prototype._isCompletedInBrowser">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>_isCompletedInBrowser
+        <span class="apidocSignatureSpan">(browser, suite)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isCompletedInBrowser = function (browser, suite) {
+    return this.complete.has(suite) &#x26;&#x26; this.complete.get(suite)[browser];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype._markAsCompleted" id="apidoc.element.gemini.suite_monitor.prototype._markAsCompleted">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>_markAsCompleted
+        <span class="apidocSignatureSpan">(suite, browser)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_markAsCompleted = function (suite, browser) {
+    var browsers = this.complete.get(suite) || {};
+    browsers[browser] = true;
+    this.complete.set(suite, browsers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+__constructor: function() {
+    this.awaiting = {};
+    this.complete = new WeakMap();
+},
+
+suiteFinished: function(suite, browser) {
+    if (suite.children.length === 0) {
+        this.<span class="apidocCodeKeywordSpan">_markAsCompleted</span>(suite, browser);
+        this.emit(Events.END_SUITE, {suite: suite, browserId: browser});
+    } else {
+        if (!this.awaiting[browser]) {
+            this.awaiting[browser] = [];
+        }
+        this.awaiting[browser].push(suite);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype._processAwaitingSuites" id="apidoc.element.gemini.suite_monitor.prototype._processAwaitingSuites">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>_processAwaitingSuites
+        <span class="apidocSignatureSpan">(browser)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_processAwaitingSuites = function (browser) {
+    var suites = this.awaiting[browser],
+        complete = [];
+
+    if (!suites) {
+        return;
+    }
+
+    _.forEachRight(suites, function(suite, i) {
+        if (_.every(suite.children, this._isCompletedInBrowser.bind(this, browser))) {
+            this._markAsCompleted(suite, browser);
+            this.emit(Events.END_SUITE, {suite: suite, browserId: browser});
+            complete.push(i);
+        }
+    }.bind(this));
+
+    _.pullAt(suites, complete);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+    if (!this.awaiting[browser]) {
+        this.awaiting[browser] = [];
+    }
+    this.awaiting[browser].push(suite);
+}
+
+this.<span class="apidocCodeKeywordSpan">_processAwaitingSuites</span>(browser);
+    },
+
+    _processAwaitingSuites: function(browser) {
+var suites = this.awaiting[browser],
+    complete = [];
+
+if (!suites) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype.constructor" id="apidoc.element.gemini.suite_monitor.prototype.constructor">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function () {
+    return this.__constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_monitor.prototype.suiteFinished" id="apidoc.element.gemini.suite_monitor.prototype.suiteFinished">
+        function <span class="apidocSignatureSpan">gemini.suite_monitor.prototype.</span>suiteFinished
+        <span class="apidocSignatureSpan">(suite, browser)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">suiteFinished = function (suite, browser) {
+    if (suite.children.length === 0) {
+        this._markAsCompleted(suite, browser);
+        this.emit(Events.END_SUITE, {suite: suite, browserId: browser});
+    } else {
+        if (!this.awaiting[browser]) {
+            this.awaiting[browser] = [];
+        }
+        this.awaiting[browser].push(suite);
+    }
+
+    this._processAwaitingSuites(browser);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.suite_util" id="apidoc.module.gemini.suite_util">module gemini.suite_util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.suite_util.shouldSkip" id="apidoc.element.gemini.suite_util.shouldSkip">
+        function <span class="apidocSignatureSpan">gemini.suite_util.</span>shouldSkip
+        <span class="apidocSignatureSpan">(suite, browserId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shouldSkip = function (suite, browserId) {
+    var skipped = suite.skipped;
+
+    if (typeof skipped === &#x27;boolean&#x27;) {
+        return skipped;
+    }
+
+    return skipped.some(function(browserSkipMatcher) {
+        if (browserSkipMatcher.matches(browserId)) {
+            suite.skipComment = browserSkipMatcher.comment;
+            return true;
+        } else {
+            return false;
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        clonedState[prop] = _.clone(this[prop]);
+    });
+
+    return clonedState;
+}
+
+shouldSkip(browserId) {
+    return suiteUtil.<span class="apidocCodeKeywordSpan">shouldSkip</span>(this.suite, browserId);
+}
+
+get fullName() {
+    return `${this.suite.fullName} ${this.name}`;
+}
+
+get skipped() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.temp" id="apidoc.module.gemini.temp">module gemini.temp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.temp.attach" id="apidoc.element.gemini.temp.attach">
+        function <span class="apidocSignatureSpan">gemini.temp.</span>attach
+        <span class="apidocSignatureSpan">(serializedTemp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (serializedTemp) {
+    if (!tempInstance) {
+        tempInstance = new Temp(serializedTemp.dir, {attach: true});
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = class ExistingBrowser extends Browser {
+    static fromObject(serializedObject) {
+return new ExistingBrowser(
+        serializedObject.sessionId,
+        serializedObject.config,
+        serializedObject.calibration
+    )
+    .<span class="apidocCodeKeywordSpan">attach</span>();
+    }
+
+    constructor(sessionId, config, calibration) {
+super(config);
+
+this.sessionId = sessionId;
+this._setCalibration(calibration);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.temp.init" id="apidoc.element.gemini.temp.init">
+        function <span class="apidocSignatureSpan">gemini.temp.</span>init
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (dir) {
+    if (!tempInstance) {
+        tempInstance = new Temp(dir);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //the default.
+    options = paths;
+    paths = undefined;
+}
+options = options || {};
+options.reporters = options.reporters || [];
+
+temp.<span class="apidocCodeKeywordSpan">init</span>(this.config.system.tempDir);
+
+const runner = Runner.create(this.config, stateProcessor);
+const envBrowsers = parseBrowsers(process.env.GEMINI_BROWSERS);
+const envSkipBrowsers = parseBrowsers(process.env.GEMINI_SKIP_BROWSERS);
+
+options.browsers = options.browsers || envBrowsers;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.temp.path" id="apidoc.element.gemini.temp.path">
+        function <span class="apidocSignatureSpan">gemini.temp.</span>path
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">path = function (opts) {
+    return tempInstance.path(opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        : temp.mkdirSync({
+            dir: dir &#x26;&#x26; path.resolve(dir),
+            prefix: &#x27;.gemini.tmp.&#x27;
+        });
+},
+
+path: function(opts) {
+    return temp.<span class="apidocCodeKeywordSpan">path</span>(_.extend(opts || {}, {
+        dir: this._tempDir
+    }));
+},
+
+serialize: function() {
+    return {dir: this._tempDir};
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.temp.serialize" id="apidoc.element.gemini.temp.serialize">
+        function <span class="apidocSignatureSpan">gemini.temp.</span>serialize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize = function () {
+    return tempInstance.serialize();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    },
+
+    path: function(opts) {
+        return tempInstance.path(opts);
+    },
+
+    serialize: function() {
+        return tempInstance.<span class="apidocCodeKeywordSpan">serialize</span>();
+    }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.util" id="apidoc.module.gemini.util">module gemini.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.util.isFullPage" id="apidoc.element.gemini.util.isFullPage">
+        function <span class="apidocSignatureSpan">gemini.util.</span>isFullPage
+        <span class="apidocSignatureSpan">(image, page, screenshotMode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(image, page, screenshotMode) =&#x3e; {
+    switch (screenshotMode) {
+        case &#x27;fullpage&#x27;: return true;
+        case &#x27;viewport&#x27;: return false;
+        case &#x27;auto&#x27;: return compareDimensions(image, page);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    },
+
+    _cropToViewport: function(image, page) {
+if (!page) {
+    return image;
+}
+
+const isFullPage = util.<span class="apidocCodeKeywordSpan">isFullPage</span>(image, page, this._screenshotMode);
+let cropArea = _.clone(page.viewport);
+
+if (this._screenshotMode === &#x27;viewport&#x27; || !isFullPage) {
+    cropArea = _.extend(cropArea, {
+        top: 0,
+        left: 0
+    });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.utils" id="apidoc.module.gemini.utils">module gemini.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.utils.requireWithNoCache" id="apidoc.element.gemini.utils.requireWithNoCache">
+        function <span class="apidocSignatureSpan">gemini.utils.</span>requireWithNoCache
+        <span class="apidocSignatureSpan">(moduleName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requireWithNoCache = function (moduleName) {
+    delete require.cache[moduleName];
+    return require(moduleName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gemini.wd_bluebird" id="apidoc.module.gemini.wd_bluebird">module gemini.wd_bluebird</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gemini.wd_bluebird.promiseRemote" id="apidoc.element.gemini.wd_bluebird.promiseRemote">
+        function <span class="apidocSignatureSpan">gemini.wd_bluebird.</span>promiseRemote
+        <span class="apidocSignatureSpan">(gridUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(gridUrl) =&#x3e; {
+    const remote = wd.promiseRemote(gridUrl);
+    const bluebirdRemote = {};
+
+    for (let prop in remote) {
+        bluebirdRemote[prop] = wrap(prop, remote);
+    }
+    return bluebirdRemote;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const Camera = require(&#x27;./camera&#x27;);
+
+module.exports = class Browser {
+constructor(config) {
+    this.config = config;
+    this.id = config.id;
+    this._wd = wd.<span class="apidocCodeKeywordSpan">promiseRemote</span>(config.gridUrl);
+    this._camera = new Camera(this._wd, config.screenshotMode);
+
+    this.sessionId = null;
+    this._calibration = null;
+}
+
+captureViewportImage(page) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
